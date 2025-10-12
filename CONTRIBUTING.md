@@ -142,14 +142,15 @@ services:
 1. **Test locally**
    ```bash
    cd category/challenge-name/deploy
-   docker-compose up -d
+   # Use docker compose (V2) or docker-compose (V1)
+   docker compose up -d
    # Test the challenge
    # Verify flag is obtainable
-   docker-compose down
+   docker compose down
    ```
 
 2. **Review checklist**
-   - [ ] Challenge deploys successfully
+   - [ ] Challenge deploys successfully (use `docker compose up -d`)
    - [ ] Flag is obtainable via documented solution
    - [ ] No unintended solutions
    - [ ] README is complete

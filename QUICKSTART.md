@@ -8,12 +8,12 @@ This guide will help you get started with creating and testing CTF challenges fo
 
 ```bash
 # Fork the repository on GitHub
-# Clone your fork
+# Clone your fork (replace YOUR_USERNAME with your GitHub username)
 git clone https://github.com/YOUR_USERNAME/ctfuqo.git
 cd ctfuqo
 
-# Add upstream remote
-git remote add upstream https://github.com/AverageGoldenRetrieverEnjoyer/ctfuqo.git
+# Add upstream remote (replace REPO_OWNER with the main repository owner)
+git remote add upstream https://github.com/REPO_OWNER/ctfuqo.git
 ```
 
 ### 2. Create a New Challenge
@@ -45,6 +45,7 @@ Edit the files in your challenge directory:
 cd web/my-challenge/deploy
 
 # Build and start the challenge
+# Use 'docker compose' (V2) or 'docker-compose' (V1) depending on your Docker version
 docker compose up -d
 
 # Check logs
@@ -141,6 +142,8 @@ git push origin feature/category-challenge-name
 ```
 
 ### Docker Commands
+
+**Note**: Use `docker compose` (Docker Compose V2) or `docker-compose` (V1) depending on your version.
 
 ```bash
 # Build and start

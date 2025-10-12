@@ -27,7 +27,7 @@ Brief explanation of the vulnerability or concept being exploited.
 ### Local Testing
 ```bash
 cd deploy
-docker-compose up -d
+docker compose up -d
 ```
 
 Access the challenge at: `http://localhost:PORT`
@@ -58,7 +58,7 @@ Second hint text
 
 ## Testing Checklist
 
-- [ ] Challenge deploys successfully with `docker-compose up`
+- [ ] Challenge deploys successfully with `docker compose up`
 - [ ] Flag is obtainable following the solution steps
 - [ ] No unintended solutions exist
 - [ ] Challenge description is clear and not misleading

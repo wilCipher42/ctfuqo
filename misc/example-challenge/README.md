@@ -33,7 +33,7 @@ Navigate through a Linux system to find hidden files and the flag.
 ### Local Testing
 ```bash
 cd deploy
-docker-compose up -d
+docker compose up -d
 ssh -p 2222 ctf@localhost
 # Password: welcome123
 ```

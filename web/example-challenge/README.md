@@ -33,14 +33,14 @@ This challenge demonstrates a classic SQL injection vulnerability in a login for
 ### Local Testing
 ```bash
 cd deploy
-docker-compose up -d
+docker compose up -d
 ```
 
 Access at: `http://localhost:8080`
 
 ### Stop the Challenge
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ## Files

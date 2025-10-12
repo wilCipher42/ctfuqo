@@ -36,7 +36,7 @@ make
 ### Local Testing
 ```bash
 cd deploy
-docker-compose up -d
+docker compose up -d
 nc localhost 9999
 ```
 

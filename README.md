@@ -31,7 +31,7 @@ challenge-name/
 
 ### Prerequisites
 
-- **Docker** and **Docker Compose** for running challenges
+- **Docker** and **Docker Compose** (V2 recommended, V1 also supported) for running challenges
 - **Git** for version control
 - **Python 3** (for many challenges and scripts)
 - **GCC** (for pwn/reverse challenges)
@@ -181,21 +181,23 @@ Before submitting a PR, ensure:
 
 ### Basic Commands
 
+**Note**: Use `docker compose` (Docker Compose V2) or `docker-compose` (V1) based on your installation.
+
 ```bash
 # Build and start a challenge
-docker-compose up -d
+docker compose up -d
 
 # View logs
-docker-compose logs -f
+docker compose logs -f
 
 # Stop a challenge
-docker-compose down
+docker compose down
 
 # Rebuild after changes
-docker-compose up -d --build
+docker compose up -d --build
 
 # Remove all containers and volumes
-docker-compose down -v
+docker compose down -v
 ```
 
 ### Managing Multiple Challenges
@@ -203,11 +205,13 @@ docker-compose down -v
 ```bash
 # Start all challenges in a category
 for dir in web/*/deploy; do
-  (cd "$dir" && docker-compose up -d)
+  (cd "$dir" && docker compose up -d)
 done
 
 # Stop all challenges
-docker-compose $(find . -name docker-compose.yml -printf '-f %p ') down
+for dir in web/*/deploy; do
+  (cd "$dir" && docker compose down)
+done
 ```
 
 ### Cleaning Up
