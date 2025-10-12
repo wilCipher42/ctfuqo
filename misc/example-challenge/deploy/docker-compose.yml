@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  ssh-challenge:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "2222:22"
+    restart: unless-stopped
