@@ -1,0 +1,50 @@
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Docker volumes and temp files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Build artifacts
+dist/
+build/
+*.pyc
+__pycache__/
+*.class
+*.o
+*.so
+*.exe
+node_modules/
+target/
+
+# Secrets and environment files
+.env
+*.pem
+*.key
+!*.pub
+secrets/
+credentials/
+
+# CTF specific
+**/flag.txt
+flags/
+*-solution.txt
+
+# Temporary test files
+tmp/
+temp/
+test-output/

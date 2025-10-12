@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  pwn:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "9999:9999"
+    restart: unless-stopped
