@@ -1,4 +1,4 @@
-# Example Web Challenge - Authentication Bypass
+# Web Challenge - Authentication Bypass
 
 **Category:** web  
 **Difficulty:** meduim  
@@ -25,12 +25,12 @@ This challenge demonstrates a classic bruteforcing application in a vulnerable l
 6. Then navigate to the login page. This is the page we need to bruteforce to get access
 7. Use Hydra for this purpose: 
 `hydra -V -s 8180 -L wordlist.txt_PATH -P wordlists.txt_PATH SERVER_IP_ADDRESS http-post-form "/check-auth.php:username=^USER^&password=^PASS^:F=Username ou Mot de passe incorrect. Essayez encore"`
-8. Wait a few minutes till he gets valid credentials. Should be : 
+8. Wait a few minutes till he gets valid credentials. Looks like this: <br>`[8180] [http-post-form] host: SERVER_IP_ADDRESS login: tom password: piscing` <br>Valid credentials: 
 ```
 - tom/piscing
 - jerry/parturient
 ```
-9. Login with tom. There is another hint: `Pauvre Tom, toujours à courrir derrière Jerry. Peut-être qu'il devrait su jerry pour tous les tracas causés lol`
+9. Login with tom. There is another hint: <br>`Pauvre Tom, toujours à courrir derrière Jerry. Peut-être qu'il devrait su jerry pour tous les tracas causés lol`
 10. Login with jerry and get the flag. That's it ! The flag will be displayed after successful bypass
 
 ### Flag
