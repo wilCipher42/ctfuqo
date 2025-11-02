@@ -59,9 +59,7 @@ docker compose down
 - `src/tom.php` - Tom home page
 - `src/jerry.php` - Jerry home page with the flag
 - `src/style1.css` - Css style of the pages
-- `solution/exploit.py` - Automated exploit script
 - `deploy/docker-compose.yaml` - Docker deployment configuration
-- `deploy/Dockerfile` - Container image definition
 
 ## Learning Objectives
 
