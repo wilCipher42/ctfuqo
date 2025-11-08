@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  # Service de la base de données Neo4j
+  db:
+    image: neo4j:4.4
+    container_name: ctf_neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/password123
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: "yes"
+    volumes:
+      - neo4j_data:/data:z
+
+    
+    # --- AJOUT 1 ---
+    # Attacher ce service au réseau 'ctf-net'
+    networks:
+      - ctf-net
+
+  # Service de l'application web Flask
+  web:
+    build:
+      context: .. 
+      dockerfile: deploy/Dockerfile 
+    container_name: ctf_web
+    ports:
+      - "5000:5000"
+    environment:
+      NEO4J_URI: bolt://db:7687
+      NEO4J_USER: neo4j
+      NEO4J_PASSWORD: password123
+      FLASK_APP: app.py
+
+        
+    # --- AJOUT 2 ---
+    # Attacher aussi ce service au réseau 'ctf-net'
+    networks:
+      - ctf-net
+
+volumes:
+  neo4j_data:
+
+# --- AJOUT 3 ---
+# Définir le réseau que nous avons mentionné ci-dessus
+networks:
+  ctf-net:
+    driver: bridge
