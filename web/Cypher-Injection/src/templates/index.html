@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>CTF Challenge</title>
+    <style>
+        body { font-family: sans-serif; margin: 2em; background: #f4f4f4; }
+        .container { max-width: 400px; margin: 0 auto; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        form { display: flex; flex-direction: column; }
+        input { margin-bottom: 10px; padding: 8px; }
+        .message { margin-top: 20px; padding: 10px; border-radius: 4px; }
+        .error { background: #f8d7da; color: #721c24; }
+        .success { background: #d4edda; color: #155724; }
+        .flag { font-weight: bold; color: green; font-family: 'Courier New', monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Challenge d'injection Cypher</h2>
+        <p>Trouvez le drapeau de l'administrateur !</p>
+        <form method="POST">
+            <label for="username">Utilisateur:</label>
+            <input type="text" id="username" name="username">
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Connexion">
+        </form>
+
+        <div class="message {% if flag %}success{% elif message != 'Veuillez vous connecter pour voir le drapeau.' %}error{% endif %}">
+            {{ message }}
+        </div>
+
+        {% if flag %}
+        <div class="flag">
+            Félicitations ! Votre drapeau est : {{ flag }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
